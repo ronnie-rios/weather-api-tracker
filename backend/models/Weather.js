@@ -8,4 +8,4 @@ const WeatherSchema = new mongoose.Schema({
 })
 
 const Weather = mongoose.model('Weather', WeatherSchema)
-module.exports = User
+module.exports = Weather
