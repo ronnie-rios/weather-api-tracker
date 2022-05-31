@@ -3,11 +3,11 @@ import WeatherContext from './context/WeatherContext'
 import Spinner from '../layout/Spinner'
 
 function Weather() {
-  const { weatherData, loading, fetchWeather } = useContext(WeatherContext)
+  const { weatherData, loading } = useContext(WeatherContext)
 
-  useEffect(() => {
-    fetchWeather()
-  }, [])
+  // useEffect(() => {
+  //   fetchWeather()
+  // }, [])
   
 
   if (!loading) {
