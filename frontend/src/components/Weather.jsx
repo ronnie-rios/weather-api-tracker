@@ -1,14 +1,9 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import WeatherContext from './context/WeatherContext'
 import Spinner from '../layout/Spinner'
-
+import User from './User'
 function Weather() {
   const { weatherData, loading } = useContext(WeatherContext)
-
-  // useEffect(() => {
-  //   fetchWeather()
-  // }, [])
-  
 
   if (!loading) {
       return (
@@ -19,6 +14,12 @@ function Weather() {
         <li>weather feels like: {weatherData.current.feelslike_f}</li>
         <li>current temp: {weatherData.current.temp_f}</li>
       </ul>
+      <User 
+        location={weatherData.location.name}
+        condtion={weatherData.current.condition.text}
+        feelsLike= {weatherData.current.feelslike_f}
+        currentTemp={weatherData.current.temp_f}
+      />
     </div>
       )
   } else {

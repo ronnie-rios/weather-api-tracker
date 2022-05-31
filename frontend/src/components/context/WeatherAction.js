@@ -8,7 +8,13 @@ const weather = axios.create({
     'X-RapidAPI-Key': API_TOKEN
   }
 })
-
+// const weatherPost = axios.create({
+//     method: 'POST',
+//     body: JSON.stringify(data),
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+// })
 export const fetchWeather = async (text) => {
     const params = new URLSearchParams({
       q: text,
@@ -17,3 +23,7 @@ export const fetchWeather = async (text) => {
     const response = await weather.get(`https://weatherapi-com.p.rapidapi.com/current.json?${params}`)
     return response.data
   }
+
+  // export const postWeather = async(body) => {
+  //   const response = await 
+  // }
