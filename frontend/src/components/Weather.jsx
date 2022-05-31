@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import Spinner from '../layout/Spinner'
 const API_TOKEN = process.env.REACT_APP_API_KEY
 
 function Weather() {
-  const [weatherData, setWeatherData] = useState([])
+  const [weatherData, setWeatherData] = useState()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetchWeather()
@@ -21,8 +23,11 @@ function Weather() {
     const data = await response.json()
     setWeatherData(data)
     console.log(data);
+    setLoading(false)
   }
-  return (
+
+  if (!loading) {
+      return (
     <div>
       <ul>
         <li>location: {weatherData.location.name}</li>
@@ -31,7 +36,11 @@ function Weather() {
         <li>current temp: {weatherData.current.temp_f}</li>
       </ul>
     </div>
-  )
+      )
+  } else {
+    return <h3>{<Spinner />}</h3>
+  }
+
 }
 
 export default Weather
