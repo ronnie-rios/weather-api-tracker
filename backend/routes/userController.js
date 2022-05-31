@@ -8,4 +8,11 @@ router.get('/', (req, res) => {
         res.status(200).json(users))
 })
 
+router.post('/', (req, res) => {
+    User.create(req.body)
+    .then(newUser => 
+        res.status(200).json(newUser))
+    .catch(err =>console.log(err))
+})
+
 module.exports = router
