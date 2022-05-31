@@ -22,9 +22,10 @@ function Form() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <p>search a city to see what the weather is like</p>
         <input
           type="text"
-          placeholder='search'
+          placeholder='search for a location'
           value={text}
           onChange={handleChange}
         />
