@@ -12,4 +12,7 @@ mongoose.connect('mongodb://localhost/weatherdb')
 const userController = require('./routes/userController')
 app.use('/user', userController)
 
+const weatherController = require('./routes/weatherController')
+app.use('/weather', weatherController)
+
 app.listen(port, () => console.log(`server is running on port ${port}`))

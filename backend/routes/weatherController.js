@@ -8,3 +8,5 @@ router.get('/', (req, res) => {
         res.status(200).json(weather))
     .catch(err => console.log(err))
 })
+
+module.exports = router
