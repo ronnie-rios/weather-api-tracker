@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function User(props) {
+function User({location, condition, feels_like, current_temp}) {
   const [post, setPost] = useState('')
 
   const handleChange = (e) => {
@@ -14,12 +14,12 @@ function User(props) {
 
     let userData ={
       name: post.name,
-      weather: [
-        props.location,
-        props.condtion,
-        props.feelsLike,
-        props.currentTemp
-      ]
+      weather: {
+        location,
+        condition,
+        feels_like,
+        current_temp
+      }
     }
    fetch('http://localhost:5001/user', {
     method: 'POST',

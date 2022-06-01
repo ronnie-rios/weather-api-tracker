@@ -16,9 +16,9 @@ function Weather() {
       </ul>
       <User 
         location={weatherData.location.name}
-        condtion={weatherData.current.condition.text}
-        feelsLike= {weatherData.current.feelslike_f}
-        currentTemp={weatherData.current.temp_f}
+        condition={weatherData.current.condition.text}
+        feels_like= {weatherData.current.feelslike_f}
+        current_temp={weatherData.current.temp_f}
       />
     </div>
       )
